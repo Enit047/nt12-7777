@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s6"><a class="active" href="#signin">Sign in</a></li>
+        <li class="tab col s6"><a href="#signup">Sign up</a></li>
+      </ul>
+    </div>
+    <div id="signin" class="col s6 offset-s3">
+        <h2>Sign in</h2>
+        {{#if errSignIn}}
+            <p class="alert_err">{{errSignIn}}</p>
+        {{/if}}
+        <form action="/auth/signin" method="post">
+            <div class="input-field">
+                <input id="email" type="email" class="validate" name="email">
+                <label for="email">Email</label>
+            </div>
+            <div class="input-field">
+                <input id="password" type="password" class="validate" name="password">
+                <label for="password">Password</label>
+            </div>
+            <input type="hidden" name='_csrf' value='{{csrf}}'>
+
+            <p><a href="/auth/reset">Forgot password?</a></p>
+            
+            <button class="btn btn-primary">Sign in</button>
+        </form>
+    </div>
+
+    <div id="signup" class="col s6 offset-s3">
+        <h2>Sign up</h2>
+        {{#if errSignUp}}
+            <p class="alert_err">{{errSignUp}}</p>
+        {{/if}}
+        <form action="/auth/signup" method="post" novalidate >
+            <div class="input-field">
+                <input id="remail" type="email" class="validate" name="email">
+                <label for="remail">Email</label>
+            </div>
+            <div class="input-field">
+                <input id="name" type="text" class="validate" name="name">
+                <label for="name">Name</label>
+            </div>
+            <div class="input-field">
+                <input id="rpassword" type="password" class="validate" name="password">
+                <label for="rpassword">Password</label>
+            </div>
+            <div class="input-field">
+                <input id="confirm" type="password" class="validate" name="confirm">
+                <label for="confirm">Confirm password</label>
+            </div>
+            <input type="hidden" name='_csrf' value='{{csrf}}'>
+            
+            <button class="btn btn-primary">Sign up</button>
+        </form>
+    </div>
+</div>

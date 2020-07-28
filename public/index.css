@@ -1,0 +1,28 @@
+.padd-3{
+    padding: 0 3rem;
+}
+
+.price_car{
+    font-size: 30px;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.alert_err{
+    width: 100%;
+    padding: 10px 145px;
+    background-color: #ffbebe;
+    font-size: 20px;
+    color: rgb(214, 44, 44);
+    border-radius: 10px;
+}
+
+.image_avatar{
+    min-width: 390px;
+    max-width: 390px;
+    height: auto;
+}

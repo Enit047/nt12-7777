@@ -1,0 +1,25 @@
+<h2>Edit car: {{car.title}}</h2>
+{{#if error}}
+    <p class="alert_err">{{error}}</p>
+{{/if}}
+<form action="/cars/edit" method="post">
+    <div class="input-field">
+        <input id="title" type="text" class="validate" name="title" value='{{car.title}}'>
+        <label for="title">Title</label>
+    </div>
+    <div class="input-field">
+        <input id="price" type="text" class="validate" name="price" value='{{car.price}}'>
+        <label for="price">Price</label>
+    </div>
+    <div class="input-field">
+        <input id="desc" type="text" class="validate" name="desc" value='{{car.desc}}'>
+        <label for="desc">Description</label>
+    </div>
+    <div class="input-field">
+        <input id="url_img" type="text" class="validate" name="url" value='{{car.url}}'>
+        <label for="url_img">Url image</label>
+    </div>
+    <input type="hidden" value="{{car._id}}" name='id' >
+    <input type="hidden" name='_csrf' value='{{csrf}}'>
+    <button class="btn btn-primary">Edit</button>
+</form>
